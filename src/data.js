@@ -14,6 +14,11 @@ const data = [
         id : 3,
         name : "Item 3", 
         completed : true,      
+    },
+    {
+        id : 4,
+        name : "Item 4", 
+        completed : true,      
     }
     
 

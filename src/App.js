@@ -10,11 +10,12 @@ class App extends React.Component {
 
         this.state = {
             title : "Todo List",
+            todos : data,
         }
     }
 
     render() {
-    const dataMapped = data.map(item => <TodoItem key={item.id} item={item} />);
+    const dataMapped = this.state.todos.map(item => <TodoItem key={item.id} item={item} />);
     
     return (
         <div>
