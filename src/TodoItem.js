@@ -10,7 +10,11 @@ class TodoItem extends React.Component {
     render() {
         return(
             <li className="todo-item">
-                <input type="checkbox" checked={this.props.item.completed} name="" id=""/>
+                <input  type="checkbox" 
+                        onChange={() => this.props.handleChange(this.props.item.id)}
+                        checked={this.props.item.completed} 
+                        
+                        />
                 <span>{this.props.item.name}</span> 
             </li>
         )
