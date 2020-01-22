@@ -3,8 +3,8 @@ import React from 'react';
 
 class TodoItem extends React.Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
     }
     
     render() {

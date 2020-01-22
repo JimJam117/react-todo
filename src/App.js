@@ -1,12 +1,13 @@
 import React from "react";
 import TodoItem from './TodoItem';
 
+import Clock from './Clock';
 import data from './data.js';
 
 class App extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             title : "Todo List",
@@ -54,6 +55,7 @@ class App extends React.Component {
             <ul className="todo-container">
             {dataMapped}
             </ul>
+            <Clock />
         </div>
     );
     }
