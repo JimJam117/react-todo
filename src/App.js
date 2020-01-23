@@ -29,7 +29,9 @@ class App extends React.Component {
             // a newTodos array that maps through the current todos array, 
             // if the id is the same as the handleChange param then switch
             let newTodos = this.state.todos.map(todo => {
-                if(todo.id == id) {todo.completed = !todo.completed}
+                if(todo.id == id) {
+                    todo.completed = !todo.completed;
+                }
                 return todo;
             });
 

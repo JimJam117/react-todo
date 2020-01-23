@@ -9,7 +9,10 @@ class TodoItem extends React.Component {
     
     render() {
         return(
-            <li className="todo-item">
+            <li style={
+                this.props.item.completed ? {textDecoration: 'line-through'} : {textDecoration: 'none'}} 
+                className="todo-item">
+                    
                 <input  type="checkbox" 
                         // onChange runs the passed handleChange method, passing this items id as param
                         onChange={() => this.props.handleChange(this.props.item.id)}
