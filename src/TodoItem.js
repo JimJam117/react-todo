@@ -8,6 +8,7 @@ class TodoItem extends React.Component {
     }
     
     render() {
+        //console.log(this.props.handleChange(this.props.item.completed));
         return(
             <li style={
                 this.props.item.completed ? {textDecoration: 'line-through'} : {textDecoration: 'none'}} 

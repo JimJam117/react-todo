@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 import clockReducer from './clockReducer';
+import todoReducer from './todoReducer';
 
 const rootReducer = combineReducers({
-    Clock: clockReducer
+    clock: clockReducer,
+    todo: todoReducer
 });
 
 export default rootReducer;
