@@ -17,3 +17,10 @@ export const deleteTodo = (id) => {
         payload: id
     }
 }
+
+export const createTodo = (id) => {
+    return {
+        type: 'CREATE_TODO',
+        payload: id
+    }
+}

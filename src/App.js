@@ -1,14 +1,21 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import TodoItem from './TodoItem';
 
 // import Clock from './Clock';
 import data from './data.js';
 import { useSelector, useDispatch, connect } from "react-redux";
 
-import {increment, toggleTodo, deleteTodo} from './actions';
+import {increment, toggleTodo, deleteTodo, createTodo} from './actions';
 
 
 const App = (props) => {
+    const [todoInput, setTodoInput] = useState("");
+
+    const formHandler = (e) => {
+        const value = e.target.value;
+        setTodoInput(value);
+    }
+
     // Selecting the clock from the store
     const clock = useSelector(state => state.clock);
 
@@ -45,6 +52,23 @@ const App = (props) => {
                 {dataMapped}
 
             </ul>
+
+            <form 
+                onSubmit={(formContent) => {
+                    formContent.preventDefault(); 
+                    dispatch(createTodo(todoInput));
+                    setTodoInput("");
+                }}
+            >
+                <label>
+                    Create Todo
+                    <input onChange={formHandler} value={todoInput} name="content" placeholder="todo" type="text"/>
+                </label>
+
+                <button type="submit">Create</button>
+
+            </form>
+
             {/* <button onClick={() => dispatch({type: 'TOGGLE_TODO', payload:1})}>+</button> */}
         <h1>Clock: {clock}</h1>
     </div>
