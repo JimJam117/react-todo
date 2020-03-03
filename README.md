@@ -1,2 +1,2 @@
 # React Todo List
-My first react app
+My first react app, a simple todo list. At first I built this app with class-based components whilst I was learning the fundamentals of react. Later, I decided to convert the handling of the state to Redux so I could learn that too. The state of the todos is handled by Redux, and all of the components have been converted to functional components using react hooks to manage their local state. The 'useSelector' hook was also used to interact with the Redux store.
