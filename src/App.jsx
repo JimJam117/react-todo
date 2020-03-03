@@ -15,7 +15,7 @@ const App = () => {
                 <AddTodo />
                 <TodoList />
 
-                {/* <Clock /> */} 
+                <Clock />
             </main>
         </div>
         

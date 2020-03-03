@@ -156,4 +156,13 @@ header{
     margin: 1em 0;
 }
 
+/* Clock */
+
+.clock{
+    display: flex;
+    justify-content: center;
+    color: #999;
+    padding: 2em;
+}
+
 
