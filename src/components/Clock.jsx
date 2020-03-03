@@ -16,7 +16,7 @@ export default function Clock(props) {
 
     return (
         <div>
-            <span>{props.title}:</span>
+            <span>{props.title ?? 'Uptime'}:</span>
             <strong>{clock}</strong>
         </div>
     );

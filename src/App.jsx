@@ -7,12 +7,18 @@ import AddTodo from "./AddTodo";
 const App = () => {
     
     return (
-        <main>
-            <h1>Todo List</h1>
-            <TodoList />
-            <AddTodo />
-            <Clock />
-        </main>
+        <div className="app">
+            <header>
+                <h1>Todo List</h1>
+            </header>
+            <main>
+                <AddTodo />
+                <TodoList />
+
+                {/* <Clock /> */} 
+            </main>
+        </div>
+        
     )
   }
 

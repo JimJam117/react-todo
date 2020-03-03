@@ -17,7 +17,7 @@ const AddTodo = () => {
     const dispatch = useDispatch();
 
     return (
-            <form 
+            <form className="add-todo"
                 onSubmit={(formContent) => {
                     formContent.preventDefault(); 
                     dispatch(createTodo(todoInput));
@@ -25,11 +25,11 @@ const AddTodo = () => {
                 }}
             >
                 <label>
-                    Create Todo
-                    <input onChange={formHandler} value={todoInput} name="content" placeholder="todo" type="text"/>
+                    <span>Create Todo</span>
+                    <input required autoComplete="off" minLength="3" maxLength="100" onChange={formHandler} value={todoInput} name="content" type="text"/>
                 </label>
 
-                <button type="submit">Create</button>
+                <button type="submit">+</button>
             </form>
 
     );

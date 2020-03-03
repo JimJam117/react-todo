@@ -26,7 +26,7 @@ const TodoList = (props) => {
 
     return (
             <ul className="todo-container">
-                {dataMapped}
+                {dataMapped.length > 0 ? dataMapped : <span className="add-todo-message">Add a todo above</span>}
             </ul>
     );
   }
