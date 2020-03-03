@@ -17,6 +17,10 @@ const App = () => {
 
                 <Clock />
             </main>
+
+            <footer>
+                <a href="https://github.com/JimJam117/react-todo">Github Page</a>
+            </footer>
         </div>
         
     )
