@@ -21,6 +21,7 @@ class TodoItem extends React.Component {
                         
                         />
                 <span>{this.props.item.name}</span> 
+                <button onClick={() => this.props.deleteTodo(this.props.item.id)}>X</button>
             </li>
         )
     }

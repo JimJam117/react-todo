@@ -5,7 +5,8 @@ import TodoItem from './TodoItem';
 import data from './data.js';
 import { useSelector, useDispatch, connect } from "react-redux";
 
-import {increment, toggleTodo} from './actions';
+import {increment, toggleTodo, deleteTodo} from './actions';
+
 
 const App = (props) => {
     // Selecting the clock from the store
@@ -25,11 +26,13 @@ const App = (props) => {
         // the input
     }, [clock])
 
+    console.log(props.todo.todos);
     const dataMapped = props.todo.todos.map((item) => 
         <TodoItem
             key = {item.id}
             item = {item}
             handleChange={() => dispatch(toggleTodo(item.id))} // passes the handleChange method into the TodoItem
+            deleteTodo = {() => dispatch(deleteTodo(item.id))}
         />
         );
 

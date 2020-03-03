@@ -1,55 +1,66 @@
-const todoReducer = (state = {
-    todos: [
-    {   
-        id: 1,
-        name: "Todo 1",
-        completed: false
+const todoReducer = (
+    // initial state
+    state = {
+        todos: [{
+                id: 1,
+                name: "learn React",
+                completed: false
+            },
+
+            {
+                id: 2,
+                name: "Learn Redux",
+                completed: false
+            },
+
+            {
+                id: 3,
+                name: "Make a Todo List in React-Redux",
+                completed: false
+            },
+
+        ]
     },
 
-    {
-        id: 2,
-        name: "Todo 2",
-        completed: false
-    },
-
-    {
-        id: 3,
-        name: "Todo 3",
-        completed: false
-    },
-
-    {
-        id: 4,
-        name: "Todo 4",
-        completed: false
-    },
-
-    ]
-}, 
     action) => {
 
-    switch(action.type) {
+    switch (action.type) {
+        
         case ('TOGGLE_TODO'):
-            // map through the todos
-            const newTodos = state.todos.map((item) => {
-
-                if(item.id === action.payload) {
-                    return {
-                        ...item,
-                        completed : !item.completed
-                    };
-                }
-                else {
-                    return item;
-                }
-            });
-
-            // return old state with new todos array
+            
             return state = {
                 ...state,
-                todos : newTodos
-            }
-            
+                todos: (
+                    // map through the todos
+                    state.todos.map((item) => {
+                        
+                        // if todo item id is the action payload
+                        if (item.id === action.payload) {
+                            return {
+                                ...item,
+                                completed: !item.completed
+                            };
+                        }
+
+                        else {
+                            return item;
+                        }
+                    })
+                )
+            }  
+          
+        case('DELETE_TODO'):
+        return state = {
+            ...state,
+            todos: (
+
+                // filter todos to only ones that have ids not equal to action.payload
+                state.todos.filter((item) => {
+                        return item.id !== action.payload;
+                })
+            )
+        }
+        
         default:
             return state;
     }
