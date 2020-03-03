@@ -64,7 +64,7 @@ const todoReducer = (
                 todos: [
                     ...state.todos,
                     {
-                        
+    
                         // id should be last item in array id +1, if no items in array set id to 1
                         id: state.todos.length > 0 ? state.todos[state.todos.length - 1].id + 1 : 1,
                         name: action.payload,

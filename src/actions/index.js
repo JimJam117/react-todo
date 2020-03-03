@@ -1,4 +1,4 @@
-export const increment = () => {
+export const clockIncrement = () => {
     return {
         type: 'INCREMENT'
     }
